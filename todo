@@ -1,0 +1,29 @@
+when create url request hits
+
+check redis to see if shorturl for request already created
+if not check db
+return created url
+
+
+else
+add to redis
+add to postgres
+
+return new_short_url
+
+redis stores 100 key value pairs for test
+
+
+
+
+-- need to change postgresql.conf
+-- listen_addresses = '*'	from whatever was original
+
+-- need to change pg_hba.conf
+-- add lines to the end specifying which ip addresses can access psql
+
+-- need to change redis.conf
+-- set bind address to all, need to comment original bind address
+-- set password to foobared, search foobared in the conf file\
+
+-- after these changes docker compose up
